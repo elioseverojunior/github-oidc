@@ -10,6 +10,7 @@
 
 ### Bug Fixes
 
+- Fixing Repo Url from CHANGELOG
 - Makefile output commands
 
 ### Chores
@@ -40,6 +41,6 @@
 
 - Initial Commit
 
-[Unreleased]: https://github.com/elioseverojunior/.zsh/compare/v0.3.0...HEAD
-[v0.3.0]: https://github.com/elioseverojunior/.zsh/compare/v0.2.0...v0.3.0
-[v0.2.0]: https://github.com/elioseverojunior/.zsh/compare/v0.1.0...v0.2.0
+[Unreleased]: https://github.com/eliodevbr/github-oidc/compare/v0.3.0...HEAD
+[v0.3.0]: https://github.com/eliodevbr/github-oidc/compare/v0.2.0...v0.3.0
+[v0.2.0]: https://github.com/eliodevbr/github-oidc/compare/v0.1.0...v0.2.0

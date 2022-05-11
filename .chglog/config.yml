@@ -2,7 +2,7 @@ style: github
 template: CHANGELOG.tpl.md
 info:
   title: CHANGELOG
-  repository_url: https://github.com/elioseverojunior/.zsh
+  repository_url: https://github.com/eliodevbr/github-oidc
 options:
   commits:
     filters:
