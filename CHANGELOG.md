@@ -12,6 +12,14 @@
 
 - Makefile output commands
 
+### Chores
+
+- Bumping Version
+
+### Features
+
+- Adding NEXT_VERSION variable to Makefile
+
 <a name="v0.2.0"></a>
 
 ## [v0.2.0] - 2022-05-11
