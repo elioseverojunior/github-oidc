@@ -7,7 +7,7 @@ DEFAULT_BRANCH := $(shell git remote show origin | grep 'HEAD branch' | cut -d' 
 LATEST_VERSION := $(shell git --no-pager tag --sort=committerdate | grep -E '^v[0-9]' | sort -V | tail -1 2>/dev/null)
 LATEST_GIT_TAG_SHORT_HASH := $(shell git rev-list -n 1 ${LATEST_VERSION} --abbrev-commit 2>/dev/null)
 
-ifeq ($(LATEST_GIT_TAG_SHORT_HASH), $(shell git rev-list HEAD --abbrev-commit))
+ifeq ($(LATEST_GIT_TAG_SHORT_HASH), $(shell git rev-parse --short HEAD))
   NEXT_GIT_TAG:=$(LATEST_VERSION)
 else
   NEXT_GIT_TAG:=$(shell semtag final -s minor -o)
@@ -28,6 +28,9 @@ publish-release:
 
 latest:
 	@echo "${LATEST_VERSION}"
+
+latest-git-short-hash:
+	@echo "${LATEST_GIT_TAG_SHORT_HASH}"
 
 next-version:
 	@echo $(shell semtag final -s minor -o)
