@@ -1,6 +1,6 @@
 SHELL=/bin/bash
 
-.PHONY: changelog release
+.PHONY: changelog release publish-release latest latest-git-short-hash next-version
 
 REGEX := ^v([0-9]{1,}\.){2}[0-9]{1,}$$
 DEFAULT_BRANCH := $(shell git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
@@ -25,7 +25,7 @@ release:
 publish-release:
 	@echo $(shell git push origin $(LATEST_VERSION))
 	@echo $(shell git push origin release/$(LATEST_VERSION))
-	@echo $(shell gh release create $(LATEST_VERSION) --generate-notes  )
+	@echo $(shell gh release create $(LATEST_VERSION) --generate-notes)
 
 latest:
 	@echo "${LATEST_VERSION}"

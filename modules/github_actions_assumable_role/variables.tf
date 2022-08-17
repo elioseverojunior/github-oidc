@@ -11,7 +11,7 @@ variable "iam_role_name" {
 variable "iam_role_description" {
   description = "AWS IAM Role Description"
   type        = string
-  default     = ""
+  default     = "GitHub Organization Account Assume Role"
 }
 
 variable "github_subs" {
@@ -26,7 +26,7 @@ variable "iam_role_max_session_duration" {
     condition     = (var.iam_role_max_session_duration >= 3600 && var.iam_role_max_session_duration < 43200)
     error_message = "Invalid IAM Role Max Session Duration value. It must be greater or equal than \"3600\" (1 hour) and less than \"43200\" (12 hours)."
   }
-  default = 3600
+  default = 7200
 }
 
 variable "force_detach_policies" {

@@ -50,7 +50,6 @@ locals {
     )
   }
 
-  # [{ github_subs, role_name }]
   github_subs = flatten([
     for org_name, org_data in local.github_orgs_with_repos : [
       for repo_name, repo_data in org_data["repositories"] : {

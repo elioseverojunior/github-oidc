@@ -4,7 +4,7 @@ resource "aws_iam_role" "github_actions" {
   assume_role_policy    = data.aws_iam_policy_document.github_actions.json
   max_session_duration  = var.iam_role_max_session_duration
   force_detach_policies = var.force_detach_policies
-  tags                  = var.tags
+  tags                  = { Name = "iam-role-github-actions" }
 }
 
 data "aws_iam_policy_document" "github_actions" {

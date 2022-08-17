@@ -1,7 +1,7 @@
 variable "assume_role_name" {
   description = "AWS IAM Assume Role Name"
   type        = string
-  default     = "GitHubOrganizationAccountAccessRole"
+  default     = "GitHubOrganizationAccountAssumeRole"
 }
 
 variable "create_oidc_provider" {
@@ -28,19 +28,6 @@ variable "policy_statenent_deny" {
     actions   = list(string)
     resources = list(string)
   })
-  default = {
-    actions = [
-      "ce:*",
-      "iam:CreateAccessKey",
-      "iam:CreateAccountAlias",
-      "iam:CreateServiceLinkedRole",
-      "iam:CreateVirtualMFADevice",
-      "iam:DeleteUserPermissionsBoundary",
-      "iam:DeleteVirtualMFADevice",
-      "iam:PassRole",
-    ]
-    resources = ["*"]
-  }
 }
 
 variable "tags" {

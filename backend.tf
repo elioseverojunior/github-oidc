@@ -1,9 +1,9 @@
 terraform {
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "eliodevbr"
+    organization = "elioseverojunior"
     workspaces {
-      name = "github-oidc-dev"
+      prefix = "github-oidc-"
     }
   }
 }
