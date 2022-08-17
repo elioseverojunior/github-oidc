@@ -1,11 +1,16 @@
-output "iam_roles" {
-  description = "Roles to be assumed by github actions"
-  value       = module.github_actions_assumable_role
+output "iam_role" {
+  description = "AWS IAM role"
+  value       = aws_iam_role.github_actions
+}
+
+output "iam_role_arn" {
+  description = "ARN of the created IAM role"
+  value       = aws_iam_role.github_actions.arn
 }
 
 output "iam_role_name" {
-  description = "Roles to be assumed by github actions"
-  value       = module.github_actions_assumable_role[var.assume_role_name].iam_role_name
+  description = "Name of the created IAM role"
+  value       = aws_iam_role.github_actions.name
 }
 
 output "oidc_provider_arn" {

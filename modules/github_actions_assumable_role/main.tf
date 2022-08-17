@@ -1,6 +1,6 @@
 resource "aws_iam_role" "github_actions" {
   name                  = var.iam_role_name
-  description           = var.iam_role_description != "" && var.iam_role_description == null ? var.iam_role_description : null
+  description           = var.iam_role_description != null && var.iam_role_description != "" ? var.iam_role_description : null
   assume_role_policy    = data.aws_iam_policy_document.github_actions.json
   max_session_duration  = var.iam_role_max_session_duration
   force_detach_policies = var.force_detach_policies
