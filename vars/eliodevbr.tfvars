@@ -1,4 +1,42 @@
-policy_statenent_deny = {
+assume_role_name     = "GitHubOrganizationAccountAssumeRole"
+environment          = "dev"
+create_oidc_provider = false
+github_actions_provider_configuration = {
+  client_id_list = [
+    "sts.amazonaws.com",
+  ]
+  thumbprint_list = [
+    "6938fd4d98bab03faadb97b34396831e3780aea1"
+  ]
+  url = "https://token.actions.githubusercontent.com"
+}
+github_repositories_map = {
+  elioseverojunior = {
+    repositories = {
+      "*" = {
+        role_name        = null
+        allowed_branches = ["*"]
+      }
+    }
+  }
+  elioetibr = {
+    repositories = {
+      "*" = {
+        role_name        = null
+        allowed_branches = ["*"]
+      }
+    }
+  }
+  eliodevbr = {
+    repositories = {
+      "*" = {
+        role_name        = null
+        allowed_branches = ["*"]
+      }
+    }
+  }
+}
+policy_statement_deny = {
   actions = [
     "ce:*",
     "iam:DeleteUserPermissionsBoundary",
@@ -8,7 +46,6 @@ policy_statenent_deny = {
   resources = ["*"]
 }
 tags = {
-  Country     = "BR"
-  Environemnt = "devlopment"
-  Name        = "github-actions-assume-role-dev"
+  market      = "br"
+  environment = "dev"
 }

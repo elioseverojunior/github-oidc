@@ -3,6 +3,11 @@ config {
   force  = true
 }
 
+plugin "aws" {
+  enabled = true
+  deep_check = true
+}
+
 rule "terraform_naming_convention" {
   enabled = true
 }
