@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.71.0
+    rev: v1.77.0
     hooks:
       - id: terraform_fmt
         args:
@@ -15,7 +15,7 @@ repos:
           - '--args=--exclude-downloaded-modules'
           - '--args=--no-module-downloads'
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.2.0
+    rev: v4.4.0
     hooks:
      - id: check-merge-conflict
      - id: end-of-file-fixer
