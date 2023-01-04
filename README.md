@@ -10,13 +10,13 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.0, < 5.0.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.0, < 5.0.0 |
 
 #### Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.26.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.0, < 5.0.0 |
 
 #### Modules
 
@@ -37,11 +37,11 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_policy_statenent_deny"></a> [policy\_statenent\_deny](#input\_policy\_statenent\_deny) | Policy Stament Deny | <pre>object({<br>    actions   = list(string)<br>    resources = list(string)<br>  })</pre> | n/a | yes |
 | <a name="input_assume_role_name"></a> [assume\_role\_name](#input\_assume\_role\_name) | AWS IAM Assume Role Name | `string` | `"GitHubOrganizationAccountAssumeRole"` | no |
 | <a name="input_create_iam_roles"></a> [create\_iam\_roles](#input\_create\_iam\_roles) | Whether or not to create IAM roles. | `bool` | `true` | no |
 | <a name="input_create_oidc_provider"></a> [create\_oidc\_provider](#input\_create\_oidc\_provider) | Whether or not to create the associated oidc provider. If true, variable 'oidc\_provider\_arn' is required | `bool` | `true` | no |
 | <a name="input_oidc_provider_arn"></a> [oidc\_provider\_arn](#input\_oidc\_provider\_arn) | Used if create\_oidc\_provider is true | `string` | `""` | no |
-| <a name="input_policy_statenent_deny"></a> [policy\_statenent\_deny](#input\_policy\_statenent\_deny) | Policy Stament Deny | <pre>object({<br>    actions   = list(string)<br>    resources = list(string)<br>  })</pre> | <pre>{<br>  "actions": [<br>    "ce:*",<br>    "iam:CreateAccessKey",<br>    "iam:CreateAccountAlias",<br>    "iam:CreateServiceLinkedRole",<br>    "iam:CreateVirtualMFADevice",<br>    "iam:DeleteUserPermissionsBoundary",<br>    "iam:DeleteVirtualMFADevice",<br>    "iam:PassRole"<br>  ],<br>  "resources": [<br>    "*"<br>  ]<br>}</pre> | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | AWS Tags | `map(any)` | <pre>{<br>  "Country": "BR",<br>  "Environemnt": "dev",<br>  "Name": "github-actions-assume-role"<br>}</pre> | no |
 
 #### Outputs
